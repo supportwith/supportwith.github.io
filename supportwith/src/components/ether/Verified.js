@@ -12,7 +12,7 @@ export default class Verified extends Component {
   metaMaskTx() {
     this.props.web3.eth.net.getId()
       .then(netId => {
-        if (netId !== "1")
+        if (netId !== 1)
           throw "Please swith to mainnet";
       })
       .then(() => this.props.web3.eth.getAccounts())

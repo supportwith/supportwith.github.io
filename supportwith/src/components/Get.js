@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 var Web3 = require('web3');
 
 
@@ -28,7 +29,9 @@ export default class Get extends Component {
         <div>
           <h3>Markdown</h3>
           {markdown}
-          <a href={url}><img src={"https://img.shields.io/badge/Support%20with-ETH-green.svg"}/></a>
+          <Link to={{pathname: "/ether/" + this.state.address}}>
+            <img src={"https://img.shields.io/badge/Support%20with-ETH-green.svg"}/>
+          </Link>
         </div>
       )
       return (
