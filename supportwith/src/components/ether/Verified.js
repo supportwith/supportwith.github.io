@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+var toWei = require('web3').utils.toWei;
+
 
 export default class Verified extends Component {
 
@@ -20,7 +22,7 @@ export default class Verified extends Component {
         return this.props.web3.eth.sendTransaction({
           from: accounts[0],
           to: this.props.address,
-          value: this.value,
+          value: toWei(this.state.value.toString(), 'ether'),
         })
       })
       .then(() => this.setState({success: true}))

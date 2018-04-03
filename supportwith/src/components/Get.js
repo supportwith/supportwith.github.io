@@ -36,16 +36,23 @@ export default class Get extends Component {
       )
       return (
         <div>
-          <h1>Get support for your work with your own Support With badge</h1>
-          <label>
-            Ether address
-          </label>
-          <input
-            type="text"
-            value={this.state.address}
-            onChange={this.updateAddress}
-          />
-          {(this.state.valid) ? mdiv : this.state.msg}
+          <div>
+            <h1>Get support for your work with your own Support With badge</h1>
+            <label>
+              Ether address
+            </label>
+            <input
+              type="text"
+              value={this.state.address}
+              onChange={this.updateAddress}
+            />
+            {(this.state.valid) ? mdiv : this.state.msg}
+          </div>
+          <div>
+            <a href="https://github.com/supportwith/supportwith.github.io/edit/source/supportwith/src/components/ether/verifications.js">
+              <button>Get Verified on GitHub!</button>
+            </a>
+          </div>
         </div>
       )
     }
