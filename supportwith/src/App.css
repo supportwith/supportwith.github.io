@@ -1,28 +1,94 @@
-.App {
-  text-align: center;
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  min-height: 100vh;
+  flex-wrap: wrap;
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  justify-content: center;
+  align-items: left;
+  min-height: 100vh;
+  width: 600px;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.content {
+  flex: 1;
 }
 
-.App-title {
-  font-size: 1.5em;
+.transaction {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
-.App-intro {
-  font-size: large;
+.markdown {
+  flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+
+.footer {
+  margin: 0 auto 0 auto;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.logo-text {
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.get-crypto {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.crypto-logo {
+  height: 2em;
+}
+
+.logo-img {
+  height: 50px;
+}
+
+.left {
+  margin-right: 10px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: row;
+
 }

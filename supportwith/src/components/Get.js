@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 var Web3 = require('web3');
 
 
+
 export default class Get extends Component {
     constructor(props) {
       super(props);
       this.state = {address: '', valid: false, msg: ''};
-      this.updateAddress = this.updateAddress.bind(this)
+      this.updateAddress = this.updateAddress.bind(this);
     }
 
     updateAddress(event) {
@@ -21,37 +22,25 @@ export default class Get extends Component {
     }
 
     render() {
-      let url = "https://supportwith.github.io/ether/" + this.state.address
-      let markdown = "[![Supportwith-Ether Badge]" +
-                      "(https://img.shields.io/badge/Support%20with-ETH-green.svg)" +
-                      "](" + url + ")"
-      let mdiv = (
-        <div>
-          <h3>Markdown</h3>
-          {markdown}
-          <Link to={{pathname: "/ether/" + this.state.address}}>
-            <img src={"https://img.shields.io/badge/Support%20with-ETH-green.svg"}/>
-          </Link>
-        </div>
-      )
+
       return (
         <div>
           <div>
-            <h1>Get support for your work with your own Support With badge</h1>
-            <label>
-              Ether address
-            </label>
-            <input
-              type="text"
-              value={this.state.address}
-              onChange={this.updateAddress}
-            />
-            {(this.state.valid) ? mdiv : this.state.msg}
-          </div>
-          <div>
-            <a href="https://github.com/supportwith/supportwith.github.io/edit/source/supportwith/src/components/ether/verifications.js">
-              <button>Get Verified on GitHub!</button>
-            </a>
+            <p>Get support for your work with your own SupportWith badge</p>
+              <label>
+                Please enter your public <strong>ether address</strong> below.
+              </label>
+            <div>
+              <input
+                id="etheraddress"
+                type="text"
+                style={{width: "80%"}}
+                value={this.state.address}
+                onChange={this.updateAddress}
+                required
+              />
+              <Link to={"/get/" + this.state.address}><button disabled={!this.state.valid}>Go</button></Link>
+            </div>
           </div>
         </div>
       )
