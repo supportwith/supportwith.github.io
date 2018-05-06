@@ -41,10 +41,10 @@ export default class ListButtons extends Component {
   }
 
   getMarkdown() {
-    let redirect = "https://supportwith.github.io/ether/" + this.state.address
-    let markdown = "[![Supportwith-Ether Badge]"
+    let redirect = process.env.PUBLIC_URL + this.state.address
+    let markdown = "[![Supportwith-Ether Badge]("
     markdown += this.getLinkToImage()
-    markdown += "](" + redirect + ")"
+    markdown += ")](" + redirect + ")"
     return markdown
   }
 
@@ -61,7 +61,7 @@ export default class ListButtons extends Component {
       <div>
         <p>
         We strongly recommend to verify this address.
-        Click <a href="https://github.com/supportwith/supportwith.github.io/edit/source/supportwith/src/components/ether/verifications.js"> here </a> to get verified!
+        Click <a href="https://github.com/supportwith/supportwith.github.io/edit/master/ether.json"> here </a> to get verified!
         </p>
       </div>
     )
