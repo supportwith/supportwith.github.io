@@ -28,6 +28,7 @@ export default class Verified extends Component {
     if (typeof window.web3 !== 'undefined') {
       this.web3 = new Web3(window.web3.currentProvider);
     }
+    console.log(etherVerifications())
     etherVerifications()
       .then(v => {
         let isVerified = (this.state.address in v);
@@ -38,10 +39,6 @@ export default class Verified extends Component {
           isVerified, user, website
         })
       })
-
-
-
-
   }
 
   metaMaskTx() {

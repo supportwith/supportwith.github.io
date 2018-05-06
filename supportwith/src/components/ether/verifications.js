@@ -1,3 +1,3 @@
-export async function verifications () {
+export function verifications () {
   return fetch(process.env.PUBLIC_URL + "/ether.json").then(res => res.json())
 }

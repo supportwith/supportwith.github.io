@@ -9,14 +9,27 @@ export default class ListButtons extends Component {
     super(props);
     this.state = {
       address: this.props.match.params.address,
+      isVerified: undefined,
+      user: undefined,
+      website: undefined
     }
-    this.state.isVerified = (this.state.address in etherVerifications);
-    this.state.user = (this.state.isVerified) ? etherVerifications[this.state.address].user : undefined;
-    this.state.website = (this.state.isVerified) ? etherVerifications[this.state.address].website : undefined;
     this.getLinkToImage = this.getLinkToImage.bind(this);
     this.getMarkdown = this.getMarkdown.bind(this);
     this.getButton = this.getButton.bind(this);
     this.alreadyVerified = this.alreadyVerified.bind(this);
+  }
+
+  componentWillMount() {
+    etherVerifications()
+      .then(v => {
+        let isVerified = (this.state.address in v);
+        let user = (isVerified) ? v[this.state.address].user : undefined;
+        let website = (isVerified) ? v[this.state.address].website : undefined;
+
+        this.setState({
+          isVerified, user, website
+        })
+      })
   }
 
   getLinkToImage() {
