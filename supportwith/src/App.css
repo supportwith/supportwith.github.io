@@ -64,6 +64,11 @@
   flex-direction: row;
 }
 
+.contributeRow {
+  display: flex;
+  flex-direction: row;
+}
+
 .text-wrap {
   display: flex;
   flex-direction: column;

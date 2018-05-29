@@ -1,12 +1,15 @@
 import React from 'react';
 import check from '../resources/check.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <div className="header">
       <div className="logo">
         <div className="text-wrap">
-          <img className="logo-img" src={check} alt="SupportWith"/>
+          <Link to="/">
+            <img className="logo-img" src={check} alt="SupportWith"/>
+          </Link>
         </div>
         <div className="logo-wrap">
           <div className="text-wrap">

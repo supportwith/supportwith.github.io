@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { verifications as etherVerifications} from './verifications';
+import mycrypto from '../../resources/mycrypto.svg'
+import myetherwallet from '../../resources/myetherwallet.svg'
+import metamask from '../../resources/metamask.png'
+
 var Web3 = require('web3');
 var toWei = require('web3').utils.toWei;
 
@@ -95,10 +99,13 @@ export default class Verified extends Component {
               />
           </div>
           <div className="right">
-            <button
-              onClick={this.metaMaskTx}
-              disabled={this.web3 == null}
-              >Support {this.state.user} with MetaMask</button>
+            <div className="contributeRow">
+              <img src={metamask} style={{height: 20, width: 20}}/>
+              <button
+                onClick={this.metaMaskTx}
+                disabled={this.web3 == null}
+                >MetaMask</button>
+            </div>
             {getMyEtherWallet(this.state.address, this.state.value, this.state.user)}
             {getMyCrypto(this.props.address, this.state.value, this.state.user)}
           </div>
@@ -116,15 +123,27 @@ export default class Verified extends Component {
 const getMyEtherWallet = (address, value, user) => {
   let href = "https://www.myetherwallet.com/?to=" + address + "&value=" + value +"&#send-transaction"
   return (
-    <a href={href}>
-      <button>Support {user} with MyEtherWallet</button>
-    </a>
+    <div className="contributeRow">
+      <a href={href}>
+        <img src={myetherwallet} style={{height:20, width: 20}}/>
+        <button>
+          MyEtherWallet
+        </button>
+      </a>
+    </div>
   )
 }
 
 const getMyCrypto = (address, value, user) => {
   let href = "https://www.mycrypto.com/?to=" + address + "&value=" + value +"&#send-transaction"
   return (
-    <a href={href}><button>Support {user} with MyCrypto</button></a>
+    <div className="contributeRow">
+      <a href={href}>
+        <img src={mycrypto} style={{height: 20, width: 20}}/>
+        <button>
+          MyCrypto
+        </button>
+      </a>
+    </div>
   )
 }
